@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Data
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div style="padding:10px;margin-top:20px;background-color:#DDDDDD;border:solid 1px #000000"
+    *ngFor="let detail of data;index as i">
+    <h3>{{detail.judul}}</h3>
+    <p>
+      {{detail.isi}}
+    </p>
+    <br/>
+  {{detail.tanggal}}
+
+    <div *ngIf="detail.favorited==0">
+      <a (click)="favorite(i)">
+        <img style="height:30px;width:30px" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_favorite_48px-512.png"/>
+      </a>
+    </div>
+  </div>
+
+</ion-content>
